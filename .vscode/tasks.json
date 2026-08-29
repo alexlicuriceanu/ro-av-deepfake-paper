@@ -1,0 +1,15 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build Thesis PDF",
+      "type": "shell",
+      "command": "pdflatex -synctex=1 -interaction=nonstopmode diploma-proiect-template.tex; bibtex diploma-proiect-template; pdflatex -synctex=1 -interaction=nonstopmode diploma-proiect-template.tex; pdflatex -synctex=1 -interaction=nonstopmode diploma-proiect-template.tex",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$latex"]
+    }
+  ]
+} 
