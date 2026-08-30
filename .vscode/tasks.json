@@ -2,9 +2,12 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Build Thesis PDF",
+      "label": "Build Active LaTeX Document",
       "type": "shell",
-      "command": "pdflatex -synctex=1 -interaction=nonstopmode diploma-proiect-template.tex; bibtex diploma-proiect-template; pdflatex -synctex=1 -interaction=nonstopmode diploma-proiect-template.tex; pdflatex -synctex=1 -interaction=nonstopmode diploma-proiect-template.tex",
+      "command": "pdflatex -synctex=1 -interaction=nonstopmode ${fileBasename}; bibtex ${fileBasenameNoExtension}; pdflatex -synctex=1 -interaction=nonstopmode ${fileBasename}; pdflatex -synctex=1 -interaction=nonstopmode ${fileBasename}",
+      "options": {
+        "cwd": "${fileDirname}"
+      },
       "group": {
         "kind": "build",
         "isDefault": true
@@ -12,4 +15,4 @@
       "problemMatcher": ["$latex"]
     }
   ]
-} 
+}
